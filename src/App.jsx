@@ -5,17 +5,27 @@ import Codeforces from './Components/codeforces/Codeforces'
 import Leetcode from './Components/leetcode/Leetcode'
 import Codechef from './Components/codechef/Codechef'
 import HomePage from "./Components/HomePage";
+import { BrowserRouter, Link, Routes,Route, redirect } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <Codeforces/>
+      {/* <Codeforces/> */}
       {/* <Leetcode/> */}
       {/* <Codechef/> */}
-      {/*<HomePage/>*/}
-    </>
+
+      <BrowserRouter>
+       {/* <HomePage/>  */}
+          <Routes>
+            <Route path='/' element={<HomePage/>} />
+            <Route path='/codeforces' element={<Codeforces/>} />  
+            <Route path='/codechef'  element={<Codechef/>} />
+            <Route path='/leetcode' element={<Leetcode/>} />
+         </Routes> 
+       </BrowserRouter>
+      </>
+    
   )
 }
 

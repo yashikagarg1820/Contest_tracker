@@ -117,7 +117,7 @@ useEffect(()  =>{
         <div className=" flex flex-wrap gap-9 p-6 m-10">
           {loadingpast ? (<h1 className="text-white font-bold text-[52px]">Fetching the data</h1>) : (contest.length===0) ? (<h2> No past Contest</h2>) : 
             (
-              pastcontest.map((contest) =>(
+              pastcontest.slice(0,10).map((contest) =>(
                 <div key={contest.id} className="bg-gray-700 hover:-translate-6 w-80 h-auto p-4  gap-9 rounded-lg text-lg text-white shadow-md">
                   <h2 className="font-bold">{contest.name}</h2>
             
@@ -128,9 +128,7 @@ useEffect(()  =>{
                     
                     className="text-blue-400 underline mt-2 block">
                      View Contest</a>
-               </div>
-
-              
+               </div>   
                ))
           )}
         

@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import Codeforces from "./codeforces/Codeforces";
+import Leetcode from "./leetcode/Leetcode";
+import Codechef from "./codechef/Codechef";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const HomePage = () => {
   const [darkMode, setDarkMode] = useState(true);
+  const [showcodeforces, setshowcodeforces] = useState(false);
 
   return (
     <div className={darkMode ? "bg-black text-white min-h-screen p-6" : "bg-white text-black min-h-screen p-6"}>
@@ -37,15 +42,18 @@ const HomePage = () => {
         </p>
 
         <div className="flex gap-4 mt-6 justify-center">
-        <a href="#" className="bg-gray-800 px-4 py-2 rounded flex items-center gap-2 text-white">
+
+       <Link to="/codeforces"  className="bg-gray-800 px-4 py-2 rounded flex items-center gap-2 text-white">
             Codeforces
-          </a>
-          <a href="#" className="bg-gray-800 px-4 py-2 rounded flex items-center gap-2 text-white">
+          </Link>
+          
+          <Link to="/leetcode" className="bg-gray-800 px-4 py-2 rounded flex items-center gap-2 text-white">
             LeetCode
-          </a>
-          <a href="#" className="bg-gray-800 px-4 py-2 rounded flex items-center gap-2 text-white">
+          </Link>
+
+          <Link to="/codechef" className="bg-gray-800 px-4 py-2 rounded flex items-center gap-2 text-white">
             CodeChef
-          </a>
+          </Link>
 
         </div>
 
